@@ -18,14 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" editable="NO" text="..." selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCg-3Y-3Cz">
-                                <rect key="frame" x="21" y="190" width="386" height="425"/>
+                                <rect key="frame" x="21" y="190" width="386" height="375"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" smartInsertDeleteType="yes"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7N0-fe-aLA">
-                                <rect key="frame" x="27" y="75" width="374" height="107"/>
+                                <rect key="frame" x="27" y="75" width="374" height="100.66666666666669"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemBlueColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="MinusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mfJ-Lg-DSS"/>
+                                    <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dLb-jK-f9E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-bL-0Q5">
@@ -53,7 +53,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="PlusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C8h-jD-MKZ"/>
+                                    <action selector="plusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JyE-8p-msn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-FR-tms">
@@ -68,7 +68,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemGray2Color"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="ClearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovC-tH-ROw"/>
+                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SeY-wq-W1O"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,11 +88,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ClearButton" destination="0ZQ-FR-tms" id="Z6i-Wz-vrb"/>
-                        <outlet property="CountLabel" destination="7N0-fe-aLA" id="ctc-pt-c0Z"/>
-                        <outlet property="MinusButton" destination="0nk-PN-PDS" id="ifk-Tm-kaP"/>
-                        <outlet property="PlusButton" destination="I4a-bL-0Q5" id="Ss1-Nz-ZWv"/>
-                        <outlet property="TextViewHistiory" destination="mCg-3Y-3Cz" id="Cs9-34-64z"/>
+                        <outlet property="clearButton" destination="0ZQ-FR-tms" id="Afx-Mh-UXU"/>
+                        <outlet property="countLabel" destination="7N0-fe-aLA" id="2ws-LX-uhj"/>
+                        <outlet property="minusButton" destination="0nk-PN-PDS" id="I4h-cG-ISc"/>
+                        <outlet property="plusButton" destination="I4a-bL-0Q5" id="Bry-jE-mt4"/>
+                        <outlet property="uploadViewHistiory" destination="mCg-3Y-3Cz" id="Lsq-QH-gRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

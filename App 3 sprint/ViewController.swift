@@ -1,28 +1,24 @@
-
 import UIKit
 import Foundation
 
 class ViewController: UIViewController {
-    @IBOutlet weak var TextViewHistiory: UITextView!
-    @IBOutlet weak var ClearButton: UIButton!
-    @IBOutlet weak var MinusButton: UIButton!
-    @IBOutlet weak var PlusButton: UIButton!
-    @IBOutlet weak var CountLabel: UILabel!
+    @IBOutlet  private weak var uploadViewHistiory: UITextView!
+    @IBOutlet  private weak var clearButton: UIButton!
+    @IBOutlet  private weak var minusButton: UIButton!
+    @IBOutlet  private weak var plusButton: UIButton!
+    @IBOutlet  private weak var countLabel: UILabel!
     
-    
+    var scope: Int = 0
+    var history: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        CountLabel.text = "0"
-        TextViewHistiory.text = "История изменений:"
+        countLabel.text = "0"
+        uploadViewHistiory.text = "История изменений:"
     }
     
-    var scope: Int = 0
-    var history: [String] = []
-    var date: String = ""
-    
-    private func DateTime() -> String {
+    private func updateCurrentDateTime() -> String {
         let currentDate = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -30,34 +26,37 @@ class ViewController: UIViewController {
     }
     
     private func UpdateCountLabel() {
-        CountLabel.text = "Значение счетчика: \(scope)"
+        countLabel.text = "Значение счетчика: \(scope)"
     }
     
-    @IBAction func ClearButton(_ sender: Any) {
+    @IBAction private func clearButton(_ sender: Any) {
         scope = 0
         UpdateCountLabel()
-        history.append( "\(DateTime()):значение сброшено")
-        TextViewHistiory.text = "\(history)"
-        
-    }
-    @IBAction func MinusButton(_ sender: Any) {
-        scope -= 1
-        if scope < 0 { scope = 0
-            history.append( "\(DateTime()):попытка уменьшить значение счётчика ниже 0")
-            TextViewHistiory.text = "\(history)"}
-        else {
-            UpdateCountLabel()
-            history.append( "\(DateTime()): значение изменено на -1")
-            TextViewHistiory.text = "\(history)"}
-        
-    }
-    @IBAction func PlusButton(_ sender: Any) {
-        scope += 1
-        UpdateCountLabel()
-        history.append( "\(DateTime()):значение изменено на +1")
-        TextViewHistiory.text = "\(history)"
+        history.append( "\(updateCurrentDateTime()):значение сброшено")
+        uploadViewHistiory.text = "\(history)"
+        uploadViewHistiory.text = history.joined(separator: "\n")
     }
     
+    @IBAction private func minusButton(_ sender: Any) {
+        scope -= 1
+        if scope < 0 { scope = 0
+            history.append( "\(updateCurrentDateTime()):попытка уменьшить значение счётчика ниже 0")
+            uploadViewHistiory.text = "\(history)"
+            uploadViewHistiory.text = history.joined(separator: "\n")}
+        else {
+            UpdateCountLabel()
+            history.append( "\(updateCurrentDateTime()): значение изменено на -1")
+            uploadViewHistiory.text = "\(history)"
+            uploadViewHistiory.text = history.joined(separator: "\n")}
+    }
+    
+    @IBAction private func plusButton(_ sender: Any) {
+        scope += 1
+        UpdateCountLabel()
+        history.append( "\(updateCurrentDateTime()):значение изменено на +1")
+        uploadViewHistiory.text = "\(history)"
+        uploadViewHistiory.text = history.joined(separator: "\n")
+    }
 }
-//commit
+
 
